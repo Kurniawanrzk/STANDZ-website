@@ -32,10 +32,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
           body: const Center(
             child:SingleChildScrollView(
-            child: Responsive(
-              mobile: MobileLogin(), 
-              desktop: DesktopLogin() 
-              )
+              child: DesktopLogin(),
             )
           )
         )
