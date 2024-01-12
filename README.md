@@ -18,4 +18,7 @@ Click here to see <a href="https://github.com/Kurniawanrzk/STANDZ-api">STANDZ WE
 ## Login page
 ![Screenshot 2024-01-12 202653](https://github.com/Kurniawanrzk/STANDZ-website/assets/92316345/815c9615-2d9c-4d76-b451-60e249e4049b)
 
+## Sequence Diagram
+![image](https://github.com/Kurniawanrzk/STANDZ-website/assets/92316345/7e72d027-743c-4a5f-9b8a-a548f4c84bc8)
+
 
