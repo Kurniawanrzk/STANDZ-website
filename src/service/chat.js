@@ -76,7 +76,29 @@ const ChatService = {
     }catch(e) {
 
     }
-  } 
+  },
+  ChatList:async(cred) => {
+    try {
+      let config = {
+        method: 'get',
+        maxBodyLength: Infinity,
+        url:  `${BaseURL}/chat/get/`,
+        headers: { 
+          Authorization: `Bearer ${cred.token}`, 
+          Accept:"application/json"
+
+        },
+      };
+
+      const response = await axios.request(config)
+
+      return response.data;
+
+    }catch(e) {
+
+    }
+  }
+
  
 };
 

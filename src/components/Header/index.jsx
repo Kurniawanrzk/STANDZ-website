@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Img, Text } from "components";
+import { Img, Input, Text } from "components";
 import AuthService from "service/auth";
 import {useNavigate} from 'react-router-dom'
 
 const Header = (props) => {
     const [user, setUser] = useState({data:null, loading:true});
     const [profil, setProfil] = useState(false)
+    const [search, setSearch] = useState()
     const navigate = useNavigate()
     useEffect(() => {
       AuthService.getUser(localStorage.getItem("token"))
@@ -38,15 +39,21 @@ const Header = (props) => {
                 style={{ cursor: "pointer" }}
                 className="bg-blue_gray-100 flex flex-row items-start justify-between p-[7px] rounded-bl-[22px] rounded-br-[21px] rounded-tl-[22px] rounded-tr-[21px] w-[82%] sm:w-full"
               >
-                <Text
-                  className="ml-[21px] mt-[3px] text-black-900_87 text-xl"
-                  size="txtInriaSansRegular20"
-                ></Text>
+                <input
+                type="text"
+                className="mt-1"
+                onChange={(val) => setSearch(val.target.value)}
+                style={{ background:"none", border:"none",height:"20px", width:"500px"  }}
+                />
+                <button
+                onClick={() => navigate(`/search/${search}`)}
+                >
                 <Img
                   className="h-[29px] md:h-auto mr-[13px] object-cover w-7 "
                   src="../../images/img_search1498521.png"
                   alt="search1498521"
                 />
+                </button>
               </div>
             </div>
             <div className="flex flex-row font-mitr items-center justify-start md:mt-0 mt-[5px] w-[23%] md:w-full">
@@ -57,11 +64,12 @@ const Header = (props) => {
                 src="../../images/img_bell68133732.png"
                 alt="bell68133732"
               />
-              <Img
+              <a href="/chat"> 
+                <Img
                 className="h-[33px] md:h-auto ml-[22px] object-cover w-[34px]"
                 src="../../images/img_speechbubble7647467.png"
                 alt="speechbubble764"
-              />
+              /></a>
               <Img
                 className="h-[51px] md:h-auto ml-[43px] rounded-[50%] w-[52px]"
                 src="../../images/user.png"

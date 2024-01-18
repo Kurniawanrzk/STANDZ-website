@@ -20,8 +20,6 @@ const ChatPage = () => {
     ChatService
     .getChat({token:localStorage.getItem("token"), room_id:params.room_id})
     .then((data) => {
-      console.log(data)
-      console.log("adsa")
       setMessages(data)
     })
 
@@ -50,7 +48,7 @@ const ChatPage = () => {
   const handleSendMessage = async () => {
     ChatService.ChatPrivate({token:localStorage.getItem("token"),user_id:user.id, message:message, receiver_usn:params.username, room_id:params.room_id})
     .then((data) => {
-      console.log(data)
+      setMessage("")
     })
     .catch((data) => {
       console.log(data)
@@ -81,7 +79,7 @@ const ChatPage = () => {
             </div>
           ))}
           <div className='p-4 bg-white-200 flex flex-row'>
-              <Input onChange={(val) => setMessage(val)} className="mt-2 w-[600px] md:w-[300px] text-white bg-white-200"  />
+              <input className = 'w-[500px] md:w-[400px] sm:w-[300px]' sty value={message} onChange={(val) => setMessage(val.target.value)}   />
               <button onClick={handleSendMessage} class="bg-red-700 text-white  py-2 px-4 rounded">
                 Send
               </button>          

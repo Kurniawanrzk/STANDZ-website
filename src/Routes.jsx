@@ -2,18 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "pages/Home";
 import NotFound from "pages/NotFound";
-const BuyerYourLandwithProfile = React.lazy(
-  () => import("pages/BuyerYourLandwithProfile"),
-);
 const BuyerYourLand = React.lazy(() => import("pages/BuyerYourLand"));
-const SellerHomepagePanel = React.lazy(
-  () => import("pages/SellerHomepagePanel"),
-);
-const ReccomendationsOne = React.lazy(() => import("pages/ReccomendationsOne"));
-const Wallet = React.lazy(() => import("pages/Wallet"));
-const BuyerchatwithProfile = React.lazy(
-  () => import("pages/BuyerchatwithProfile"),
-);
+const SearchPage = React.lazy(() => import("pages/SearchPage"))
 const SellerHistorywithMenuPanel = React.lazy(
   () => import("pages/SellerHistorywithMenuPanel"),
 );
@@ -71,6 +61,7 @@ const SellerHistorywithProfile = React.lazy(
 const ReccomendationswprofileOne = React.lazy(
   () => import("pages/ReccomendationswprofileOne"),
 );
+const ChatList = React.lazy(() => import("pages/ChatList"))
 const DailyAttendance = React.lazy(() => import("pages/DailyAttendance"));
 const SellerHistory = React.lazy(() => import("pages/SellerHistory"));
 const UserProfilebuyer = React.lazy(() => import("pages/UserProfilebuyer"));
@@ -149,6 +140,7 @@ const ProjectRoutes = () => {
           />
           <Route path="/chatwithprofile" element={<ChatwithProfile />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/chat/" element={<ChatList />} />
           <Route path="/chat/:room_id/:username" element={<Chat />} />
           <Route path="/buyerchatwithmenu" element={<BuyerchatwithMenu />} />
           <Route
@@ -267,23 +259,11 @@ const ProjectRoutes = () => {
             element={<SellerHistorywithMenuPanel />}
           />
           <Route
-            path="/buyerchatwithprofile"
-            element={<BuyerchatwithProfile />}
-          />
-          <Route path="/wallet" element={<Wallet />} />
-          <Route path="/reccomendationsone" element={<ReccomendationsOne />} />
-          <Route
-            path="/sellerhomepagepanel"
-            element={<SellerHomepagePanel />}
-          />
-          <Route path="/buyeryourland" element={<BuyerYourLand />} />
-          <Route
-            path="/buyeryourlandwithprofile"
-            element={<BuyerYourLandwithProfile />}
-          />
-          <Route
             path="/land/manage/create"
             element={<LandCreate />}
+          />
+          <Route
+            path="/search/:query" element={<SearchPage />}
           />
         </Routes>
       </Router>

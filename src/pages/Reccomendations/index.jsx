@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Img, List, Text, Input } from "components";
 import axios from "axios";
 import { Navigate } from 'react-router-dom'
+import Header from "components/Header";
  
 const truncateString = (str, maxLength) => {
   if (str.length > maxLength) {
@@ -55,6 +56,7 @@ const  ReccomendationsPage = () => {
     await axios
       .request(config)
       .then((response) => {
+        console.log(response)
         setAllLandData({ data: response.data.data, loading: false });
         setTotalPage(response.data.last_page);
       })
@@ -93,64 +95,14 @@ const  ReccomendationsPage = () => {
     <>
       <div className="bg-lime-600 flex flex-col items-end justify-end mx-auto pl-[18px] py-[18px] w-full">
         <div className="flex flex-col items-start justify-start mt-[30px] md:px-5 w-[97%] md:w-full">
-          <div className="flex md:flex-col flex-row font-inriasans md:gap-10 items-start justify-between w-[97%] md:w-full">
-            <div className="flex sm:flex-col flex-row sm:gap-10 items-center justify-between w-[45%] md:w-full">
-              <Img
-                className="h-[38px] md:h-auto object-cover rounded-[9px]"
-                src="images/img_menu18288591.png"
-                alt="menu18288593"
-              />
-              <div
-                style={{ cursor: "pointer" }}
-                className="bg-blue_gray-100 flex flex-row items-start justify-between p-[7px] rounded-bl-[22px] rounded-br-[21px] rounded-tl-[22px] rounded-tr-[21px] w-[82%] sm:w-full"
-              >
-                <Text
-                  className="ml-[21px] mt-[3px] text-black-900_87 text-xl"
-                  size="txtInriaSansRegular20"
-                ></Text>
-                <Img
-                  className="h-[29px] md:h-auto mr-[13px] object-cover w-7 "
-                  src="images/img_search1498521.png"
-                  alt="search1498521"
-                />
-              </div>
-            </div>
-            <div className="flex flex-row font-mitr items-center justify-start md:mt-0 mt-[5px] w-[23%] md:w-full">
-              <Img
-                className="h-9 md:h-auto object-cover w-[35px]"
-                src="images/img_bell68133732.png"
-                alt="bell68133732"
-              />
-              <Img
-                className="h-[33px] md:h-auto ml-[22px] object-cover w-[34px]"
-                src="images/img_speechbubble7647467.png"
-                alt="speechbubble764"
-              />
-              <Img
-                className="h-[51px] md:h-auto ml-[43px] rounded-[50%] w-[52px]"
-                src="images/img_do2024exoseasons.png"
-                alt="do2024exoseason"
-              />
-              <Text
-                className="ml-[18px] text-black-900 text-xl"
-                size="txtMitrRegular20"
-              >
-                Heri P.
-              </Text>
-              <Img
-                className="h-[13px] md:h-auto ml-[13px] object-cover w-[9%]"
-                src="images/img_arrowdownsign.png"
-                alt="arrowdownsign"
-              />
-            </div>
-          </div>
+          <Header />
           <div className="flex md:flex-col flex-row font-inriasans gap-[41px] items-center justify-start md:ml-[0] ml-[13px] mt-[26px] w-[94%] md:w-full">
           </div>
           <Text
             className="mt-[45px] md:text-4xl sm:text-[34px] text-[38px] text-black-900"
             size="txtMavenProBold38"
            >
-              Nearby : {location.city} City
+              Nearby : {location.city} 
           </Text>
           <div className="mt-[33px] overflow-auto overflow-x-auto w-full">
             <div
