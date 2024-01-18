@@ -6,6 +6,8 @@ niat ga niat team member
 - NABIL PRAMODHANA NUGRAHA (HIPSTER)
 - KURNIAWAN RIZKI TRINANTA SEMBIRING (HACKER)
 
+Click here to see <a href="https://github.com/Kurniawanrzk/STANDZ-api">STANDZ WEBSITE API REPOS</a>
+
 ## STANDZ Description
 Standz Application is specifically designed to help SME entrepreneurs find strategic and affordable places to sell their products. With a focus on convenience and efficiency, this application connects two main parties:
 
@@ -32,7 +34,6 @@ Key Features:
 - Active monitoring and verification by the admin.
 
 With this concept, the Standz application provides an efficient solution for SME entrepreneurs to find and rent selling locations, bridging the gap between business owners and landowners in a safe and reliable manner.
-Click here to see <a href="https://github.com/Kurniawanrzk/STANDZ-api">STANDZ WEBSITE API REPOS</a>
 # Screenshoot of Website
 ## Homepage
 ![Trinantasembiring's Application](https://github.com/Kurniawanrzk/STANDZ-website/assets/92316345/aa521c36-22e0-4096-b1cf-1b93dc3af98b)
